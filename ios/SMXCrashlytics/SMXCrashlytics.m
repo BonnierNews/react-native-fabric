@@ -9,11 +9,6 @@ NSInteger const DefaultCode = 100;
 
 RCT_EXPORT_MODULE();
 
-- (dispatch_queue_t)methodQueue
-{
-  return dispatch_get_main_queue();
-}
-
 RCT_EXPORT_METHOD(log:(NSString *)message)
 {
   CLS_LOG(@"%@", message);

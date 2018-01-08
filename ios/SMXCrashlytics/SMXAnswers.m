@@ -9,12 +9,6 @@
 
 RCT_EXPORT_MODULE();
 
-- (dispatch_queue_t)methodQueue
-{
-  return dispatch_get_main_queue();
-}
-
-
 RCT_EXPORT_METHOD(logSignUp:(NSString *)signUpMethod
                   success:(BOOL)succeeded
                   customAttributes:(NSDictionary *)customAttributes)
@@ -70,7 +64,7 @@ RCT_EXPORT_METHOD(logAddToCart:(nullable NSString *)itemPriceOrNil
                   itemType:(nullable NSString *)itemTypeOrNil
                   itemId:(nullable NSString *)itemIdOrNil
                   customAttributes:(nullable ANS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil){
-  
+
   [Answers logAddToCartWithPrice:[self getDecimalFromString:itemPriceOrNil] currency:currencyOrNil itemName:itemNameOrNil itemType:itemTypeOrNil itemId:itemIdOrNil customAttributes:customAttributesOrNil];
 }
 
